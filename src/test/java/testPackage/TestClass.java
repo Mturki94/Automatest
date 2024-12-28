@@ -25,9 +25,10 @@ public class TestClass {
 
         WebDriver driver = new ChromeDriver();
 //        ChromeDriver driver;
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
         driver.get("https://duckduckgo.com/");
-        driver.navigate().to("https://duckduckgo.com");
+//        driver.navigate().to("https://duckduckgo.com");
         String actualTitle = driver.getTitle();
         System.out.println(actualTitle);
         Assert.assertEquals(actualTitle, "Google");
@@ -49,6 +50,7 @@ public class TestClass {
 
     @Test
     public void chrome_search_3() {
+
         WebDriver driver = new ChromeDriver();
         driver.get("https://duckduckgo.com/");
 
